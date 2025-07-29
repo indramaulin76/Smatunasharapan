@@ -844,7 +844,7 @@ section,
   padding: 60px 0;
   display: flex;
   align-items: center;
-  background: url("../img/sma\ th.jpeg") top left;
+  background: url("../img/bgmain.jpeg") top left;
   background-size: cover;
 }
 
@@ -1953,4 +1953,57 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+.service-item {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  border-radius: 12px;
+  padding: 30px 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.service-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* lapisan gelap agar teks terlihat */
+  z-index: 1;
+  border-radius: 12px;
+}
+
+.service-item * {
+  position: relative;
+  z-index: 2;
+}
+
+.bg-kurikulum {
+  background-image: url("../img/bgkurikulimmerdeka.jpeg");
+}
+.bg-kurikulum h3 {
+  color: var(--contrast-color);
+}
+.bg-kurikulum p {
+  color: var(--contrast-color);
+}
+
+.bg-sholat {
+  background-image: url("../img/bgsholat.jpeg");
+}
+.bg-sholat h3 {
+  color: var(--contrast-color);
+}
+.bg-sholat p {
+  color: var(--contrast-color);
+}
+
+.bg-tahfidz {
+  background-image: url("../img/hafidst.jpeg");
+}
+.bg-tahfidz h3 {
+  color: var(--contrast-color);
+} 
+.bg-tahfidz p {
+  color: var(--contrast-color);
 }
