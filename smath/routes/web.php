@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/articles/{article}', [PublicArticleController::class, 'show'])->name('articles.show');
 
-use App\Http\Controllers\Admin\DashboardController;
-
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -18,20 +16,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-use App\Http\Controllers\Admin\ArticleController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\TeacherController;
-use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
-use App\Http\Controllers\Admin\ServiceController;
-use App\Http\Controllers\Admin\UserController;
-
-Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
-    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('articles', ArticleController::class);
-    Route::resource('teachers', TeacherController::class);
-    Route::resource('profile', AdminProfileController::class);
-    Route::resource('services', ServiceController::class);
-    Route::resource('users', UserController::class);
-});
 
 require __DIR__.'/auth.php';
