@@ -6,7 +6,7 @@
   </div>
 
   <div class="container mx-auto">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
 
         @foreach ($teachers as $teacher)
             <div data-aos="fade-up" data-aos-delay="100">
